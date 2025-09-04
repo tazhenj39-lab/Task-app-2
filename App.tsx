@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { Task } from './types';
 import Calendar from './components/Calendar';
@@ -186,7 +185,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-slate-100">
+    <div className="flex flex-col min-h-screen bg-gray-100">
       <Header view={view} setView={setView} />
       <main 
         className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 overflow-hidden"

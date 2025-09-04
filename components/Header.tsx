@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { View } from '../App';
 import { CalendarIcon, ListBulletIcon, ChartBarIcon, TennisRacketIcon } from './IconComponents';
@@ -14,9 +13,9 @@ const NavButton: React.FC<{
   ariaLabel: string;
   children: React.ReactNode;
 }> = ({ isActive, onClick, ariaLabel, children }) => {
-  const baseClasses = "p-2 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-indigo-500";
-  const activeClasses = "bg-indigo-100 text-indigo-600";
-  const inactiveClasses = "text-slate-500 hover:bg-slate-200 hover:text-slate-800";
+  const baseClasses = "p-2 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-500";
+  const activeClasses = "bg-blue-100 text-blue-600";
+  const inactiveClasses = "text-gray-500 hover:bg-gray-200 hover:text-gray-800";
 
   return (
     <button
@@ -32,12 +31,12 @@ const NavButton: React.FC<{
 
 const Header: React.FC<HeaderProps> = ({ view, setView }) => {
   return (
-    <header className="bg-white/80 backdrop-blur-lg sticky top-0 z-10 border-b border-slate-200/70">
+    <header className="bg-gray-50/80 backdrop-blur-lg sticky top-0 z-10 border-b border-gray-200/70">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <CalendarIcon className="h-8 w-8 text-indigo-500" />
-            <h1 className="text-2xl font-bold text-slate-800 tracking-tight">
+            <CalendarIcon className="h-8 w-8 text-blue-600" />
+            <h1 className="text-2xl font-bold text-gray-800 tracking-tight">
               タスク管理アプリ
 
             </h1>

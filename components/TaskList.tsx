@@ -15,8 +15,8 @@ interface TaskListProps {
 
 const TaskList: React.FC<TaskListProps> = ({ title, tasks, onDelete, onToggle, emptyMessage = "タスクはありません。", completedTasksCount, totalTasksCount }) => {
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-lg border border-slate-200">
-      <h3 className="text-xl font-bold text-slate-800 mb-4 pb-2 border-b border-slate-200">{title}</h3>
+    <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+      <h3 className="text-xl font-bold text-gray-800 mb-4 pb-2 border-b border-gray-200">{title}</h3>
       
       {totalTasksCount > 0 && (
          <TaskProgress completed={completedTasksCount} total={totalTasksCount} />
@@ -34,7 +34,7 @@ const TaskList: React.FC<TaskListProps> = ({ title, tasks, onDelete, onToggle, e
           ))}
         </ul>
       ) : (
-        <p className="text-slate-500 text-center py-4">{emptyMessage}</p>
+        <p className="text-gray-500 text-center py-4">{emptyMessage}</p>
       )}
     </div>
   );

@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Task, TaskTag } from '../types';
 import { PlusIcon } from './IconComponents';
@@ -40,11 +39,11 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask, selectedDate }) => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-lg border border-slate-200">
-      <h3 className="text-xl font-bold text-slate-800 mb-4">タスクを追加</h3>
+    <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+      <h3 className="text-xl font-bold text-gray-800 mb-4">タスクを追加</h3>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="title" className="block text-sm font-medium text-slate-600 mb-1">
+          <label htmlFor="title" className="block text-sm font-medium text-gray-600 mb-1">
             タイトル
           </label>
           <input
@@ -52,13 +51,13 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask, selectedDate }) => {
             id="title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition placeholder:text-slate-400"
+            className="w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition placeholder:text-gray-400"
             placeholder="例: プロジェクトのレポートを提出"
             required
           />
         </div>
         <div>
-          <label htmlFor="description" className="block text-sm font-medium text-slate-600 mb-1">
+          <label htmlFor="description" className="block text-sm font-medium text-gray-600 mb-1">
             詳細 (任意)
           </label>
           <textarea
@@ -66,21 +65,21 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask, selectedDate }) => {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             rows={2}
-            className="w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition placeholder:text-slate-400"
+            className="w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition placeholder:text-gray-400"
             placeholder="例: 最終稿を確認し、添付ファイルを準備"
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-slate-600 mb-2">
+          <label className="block text-sm font-medium text-gray-600 mb-2">
             タグ
           </label>
           <div className="flex items-center gap-2 flex-wrap">
             {(['work', 'private', 'study', 'other'] as TaskTag[]).map((t) => {
               const tagInfo: Record<TaskTag, { name: string; classes: string; }> = {
-                work: { name: '仕事', classes: 'bg-indigo-600' },
-                private: { name: 'プライベート', classes: 'bg-emerald-600' },
-                study: { name: '勉強', classes: 'bg-amber-500' },
-                other: { name: 'その他', classes: 'bg-slate-500' },
+                work: { name: '仕事', classes: 'bg-blue-600' },
+                private: { name: 'プライベート', classes: 'bg-green-600' },
+                study: { name: '勉強', classes: 'bg-purple-600' },
+                other: { name: 'その他', classes: 'bg-gray-600' },
               };
               return (
                 <button
@@ -90,7 +89,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask, selectedDate }) => {
                   className={`px-3 py-1.5 text-sm font-semibold rounded-full transition-colors ${
                     tag === t
                       ? `text-white ${tagInfo[t].classes}`
-                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                   }`}
                 >
                   {tagInfo[t].name}
@@ -101,7 +100,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask, selectedDate }) => {
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label htmlFor="dueDate" className="block text-sm font-medium text-slate-600 mb-1">
+            <label htmlFor="dueDate" className="block text-sm font-medium text-gray-600 mb-1">
               期日
             </label>
             <input
@@ -109,12 +108,12 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask, selectedDate }) => {
               id="dueDate"
               value={dueDate}
               onChange={(e) => setDueDate(e.target.value)}
-              className="w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+              className="w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
               required
             />
           </div>
           <div>
-            <label htmlFor="time" className="block text-sm font-medium text-slate-600 mb-1">
+            <label htmlFor="time" className="block text-sm font-medium text-gray-600 mb-1">
               時間
             </label>
             <input
@@ -122,7 +121,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask, selectedDate }) => {
               id="time"
               value={time}
               onChange={(e) => setTime(e.target.value)}
-              className="w-full px-3 py-2 bg-white border border-slate-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"
+              className="w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
               required
             />
           </div>
@@ -134,15 +133,15 @@ const TaskForm: React.FC<TaskFormProps> = ({ onAddTask, selectedDate }) => {
               type="checkbox"
               checked={isRecurring}
               onChange={(e) => setIsRecurring(e.target.checked)}
-              className="h-4 w-4 rounded border-slate-300 text-indigo-600 focus:ring-indigo-500"
+              className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
             />
-            <label htmlFor="isRecurring" className="ml-2 block text-sm text-slate-600">
+            <label htmlFor="isRecurring" className="ml-2 block text-sm text-gray-600">
               毎日やるタスク
             </label>
           </div>
         <button
           type="submit"
-          className="w-full flex items-center justify-center gap-2 bg-indigo-600 text-white font-semibold py-2.5 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-indigo-500 transition-transform transform active:scale-95"
+          className="w-full flex items-center justify-center gap-2 bg-blue-600 text-white font-semibold py-2.5 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-500 transition-transform transform active:scale-95"
         >
           <PlusIcon className="w-5 h-5" />
           <span>タスクを追加</span>

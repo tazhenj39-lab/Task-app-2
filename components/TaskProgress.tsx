@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface TaskProgressProps {
@@ -13,19 +12,19 @@ const TaskProgress: React.FC<TaskProgressProps> = ({ completed, total }) => {
   return (
     <div className="mb-4">
       <div className="flex justify-between items-center mb-1">
-        <h4 className="text-sm font-semibold text-slate-600">今日の進捗</h4>
-        <span className="text-sm font-medium text-slate-500">{completed} / {total}</span>
+        <h4 className="text-sm font-semibold text-gray-600">今日の進捗</h4>
+        <span className="text-sm font-medium text-gray-500">{completed} / {total}</span>
       </div>
-      <div className="w-full bg-slate-200 rounded-full h-2.5">
+      <div className="w-full bg-gray-200 rounded-full h-2.5">
         <div
           className={`h-2.5 rounded-full transition-all duration-500 ease-out ${
-            allTasksCompleted ? 'bg-emerald-500' : 'bg-indigo-600'
+            allTasksCompleted ? 'bg-green-500' : 'bg-blue-600'
           }`}
           style={{ width: `${percentage}%` }}
         ></div>
       </div>
       {allTasksCompleted && (
-        <p className="text-center text-sm text-emerald-600 font-semibold mt-3">
+        <p className="text-center text-sm text-green-600 font-semibold mt-3">
           素晴らしい！今日のタスクはすべて完了です！🎉
         </p>
       )}

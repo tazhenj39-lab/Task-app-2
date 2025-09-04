@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Task, TaskTag } from '../types';
 import { TrashIcon, CheckIcon, ClockIcon, RepeatIcon } from './IconComponents';
@@ -28,32 +27,32 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onDelete, onToggle }) => {
   }, [isCompleted]);
 
   const tagInfo: Record<TaskTag, { name: string; classes: string }> = {
-    work: { name: '仕事', classes: 'bg-indigo-100 text-indigo-800' },
-    private: { name: 'プライベート', classes: 'bg-emerald-100 text-emerald-800' },
-    study: { name: '勉強', classes: 'bg-amber-100 text-amber-800' },
-    other: { name: 'その他', classes: 'bg-slate-200 text-slate-800' },
+    work: { name: '仕事', classes: 'bg-blue-100 text-blue-800' },
+    private: { name: 'プライベート', classes: 'bg-green-100 text-green-800' },
+    study: { name: '勉強', classes: 'bg-purple-100 text-purple-800' },
+    other: { name: 'その他', classes: 'bg-gray-200 text-gray-800' },
   };
 
   return (
-    <li className={`flex items-start gap-4 p-4 rounded-lg bg-white border border-slate-200 hover:bg-slate-50 transition-all duration-200 ${isGlowing ? 'glow-on-complete' : ''}`}>
+    <li className={`flex items-start gap-4 p-4 rounded-lg bg-white border border-gray-200 hover:bg-gray-50 transition-all duration-200 ${isGlowing ? 'glow-on-complete' : ''}`}>
       <button
         onClick={() => onToggle(id)}
         className={`mt-1 flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-200 ${
           isCompleted
-            ? 'bg-indigo-600 border-indigo-600'
-            : 'border-slate-300 hover:border-indigo-500'
+            ? 'bg-blue-600 border-blue-600'
+            : 'border-gray-300 hover:border-blue-500'
         }`}
         aria-label={isCompleted ? 'Mark as incomplete' : 'Mark as complete'}
       >
         {isCompleted && <CheckIcon className="w-4 h-4 text-white" />}
       </button>
       <div className="flex-grow">
-        <p className={`font-semibold text-slate-800 ${isCompleted ? 'line-through text-slate-400' : ''}`}>
+        <p className={`font-semibold text-gray-800 ${isCompleted ? 'line-through text-gray-400' : ''}`}>
           {title}
           {/* Fix: Wrap RepeatIcon in a span with a title attribute to fix a TypeScript error and provide a tooltip for accessibility. */}
-          {isRecurring && <span title="毎日やるタスク"><RepeatIcon className="inline-block w-4 h-4 ml-2 text-indigo-500" /></span>}
+          {isRecurring && <span title="毎日やるタスク"><RepeatIcon className="inline-block w-4 h-4 ml-2 text-blue-500" /></span>}
         </p>
-        <div className={`flex items-center flex-wrap gap-x-3 gap-y-1 text-sm mt-1 ${isCompleted ? 'text-slate-400' : 'text-slate-500'}`}>
+        <div className={`flex items-center flex-wrap gap-x-3 gap-y-1 text-sm mt-1 ${isCompleted ? 'text-gray-400' : 'text-gray-500'}`}>
             <div className={`px-2 py-0.5 text-xs font-semibold rounded-full ${tagInfo[tag]?.classes || tagInfo.work.classes}`}>
                 {tagInfo[tag]?.name || tagInfo.work.name}
             </div>
@@ -63,7 +62,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onDelete, onToggle }) => {
             </div>
             {description && (
                 <>
-                    <span className="text-slate-400">•</span>
+                    <span className="text-gray-400">•</span>
                     <p className={`${isCompleted ? 'line-through' : ''}`}>
                         {description}
                     </p>
@@ -73,7 +72,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ task, onDelete, onToggle }) => {
       </div>
       <button
         onClick={() => onDelete(id)}
-        className="flex-shrink-0 p-2 text-slate-500 hover:text-red-500 hover:bg-red-500/10 rounded-full transition-all duration-200"
+        className="flex-shrink-0 p-2 text-gray-500 hover:text-blue-500 hover:bg-blue-500/10 rounded-full transition-all duration-200"
         aria-label="Delete task"
       >
         <TrashIcon className="w-5 h-5" />

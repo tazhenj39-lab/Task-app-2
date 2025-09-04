@@ -63,13 +63,13 @@ const EconomicReport: React.FC = () => {
 
   const renderContent = () => {
     if (isLoading) {
-      return <p className="text-slate-500 text-center py-4">経済レポートを生成中...</p>;
+      return <p className="text-gray-500 text-center py-4">経済レポートを生成中...</p>;
     }
     if (error) {
       return <p className="text-red-500 text-center py-4">{error}</p>;
     }
     return (
-      <div className="text-slate-600 space-y-2 text-sm whitespace-pre-wrap">
+      <div className="text-gray-600 space-y-2 text-sm whitespace-pre-wrap">
          {report}
       </div>
     );
@@ -84,11 +84,11 @@ const EconomicReport: React.FC = () => {
     }
     
     return (
-      <div className="mt-4 pt-4 border-t border-slate-200">
-        <h4 className="text-sm font-semibold text-slate-500 mb-2">参考資料:</h4>
+      <div className="mt-4 pt-4 border-t border-gray-200">
+        <h4 className="text-sm font-semibold text-gray-500 mb-2">参考資料:</h4>
         <ul className="list-disc list-inside space-y-1">
           {validSources.map((source, index) => (
-            <li key={index} className="text-sm text-indigo-600 truncate">
+            <li key={index} className="text-sm text-blue-600 truncate">
               <a 
                 href={source.web!.uri!} 
                 target="_blank" 
@@ -106,9 +106,9 @@ const EconomicReport: React.FC = () => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-lg border border-slate-200 mb-8">
-      <div className="flex items-center gap-3 text-xl font-bold text-slate-800 mb-4 pb-2 border-b border-slate-200">
-        <ChartBarIcon className="w-6 h-6 text-indigo-500" />
+    <div className="bg-white p-6 rounded-2xl shadow-lg border border-gray-200 mb-8">
+      <div className="flex items-center gap-3 text-xl font-bold text-gray-800 mb-4 pb-2 border-b border-gray-200">
+        <ChartBarIcon className="w-6 h-6 text-blue-600" />
         <h3>今日の経済レポート</h3>
       </div>
       {renderContent()}
